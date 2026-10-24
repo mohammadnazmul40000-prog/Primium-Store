@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b14">
+  <meta name="description" content="Premium Panel — গেমিং টুলস ও প্যাকেজ সম্পর্কে জানুন এবং WhatsApp-এ যোগাযোগ করুন।">
+  <title>Premium Panel | Gaming Tools</title>
+  <style>
+    :root{--bg:#070b14;--panel:#0d1525;--panel2:#101d33;--blue:#168cff;--cyan:#55d6ff;--text:#f4f8ff;--muted:#9aabc4;--line:rgba(130,177,255,.17)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 80% -10%,rgba(22,140,255,.2),transparent 38%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;background:rgba(7,11,20,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:850;letter-spacing:.2px}
+    .logo{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(135deg,var(--blue),#1645a9);box-shadow:0 6px 24px #168cff40;font-size:20px}
+    .brand span:last-child{font-size:17px}
+    nav{display:flex;gap:22px;color:var(--muted);font-size:14px}
+    nav a:hover{color:var(--cyan)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 18px;font-weight:800;cursor:pointer;transition:transform .2s,filter .2s}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+    .primary{color:white;background:linear-gradient(135deg,#168cff,#1764e8);box-shadow:0 8px 24px #168cff35}
+    .secondary{border:1px solid var(--line);background:#ffffff08;color:var(--text)}
+    .hero{padding:76px 0 60px;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:42px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #168cff55;background:#168cff12;color:#80caff;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:800;letter-spacing:.7px}
+    .dot{width:7px;height:7px;background:#4be0a5;border-radius:50%;box-shadow:0 0 12px #4be0a5}
+    h1{font-size:clamp(38px,6vw,64px);line-height:1.12;letter-spacing:-1.8px;margin:20px 0}
+    h1 em{font-style:normal;background:linear-gradient(90deg,#56d7ff,#168cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted);font-size:17px;max-width:570px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+    .trust{display:flex;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:13px;margin-top:24px}
+    .trust span:before{content:"✓";color:#4be0a5;font-weight:900;margin-right:7px}
+    .visual{position:relative;min-height:340px;display:grid;place-items:center}
+    .orb{position:absolute;width:250px;height:250px;border-radius:50%;background:#168cff22;filter:blur(30px)}
+    .game-card{position:relative;width:min(100%,350px);padding:24px;border-radius:26px;border:1px solid #58b9ff45;background:linear-gradient(145deg,#142744eF,#0a1222f5);box-shadow:0 30px 90px #0008;transform:rotate(2deg)}
+    .card-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px}
+    .chip{padding:5px 9px;background:#168cff20;color:#7ccaff;border-radius:7px;font-weight:800}
+    .game-icon{height:145px;margin:18px 0;display:grid;place-items:center;border-radius:18px;background:radial-gradient(circle at 50% 40%,#168cff42,transparent 55%),linear-gradient(135deg,#0d1a30,#101d33);font-size:76px}
+    .game-card h3{margin:0 0 4px;font-size:22px}
+    .game-card p{margin:0;color:var(--muted);font-size:13px}
+    .meter{height:7px;border-radius:99px;background:#ffffff12;margin-top:18px;overflow:hidden}
+    .meter i{display:block;height:100%;width:78%;background:linear-gradient(90deg,#168cff,#55d6ff);border-radius:99px}
+    section{padding:58px 0}
+    .section-head{text-align:center;max-width:660px;margin:0 auto 30px}
+    .section-head h2{font-size:clamp(27px,4vw,38px);margin:0 0 8px}
+    .section-head p{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .feature,.plan,.step,.contact-box{border:1px solid var(--line);background:linear-gradient(145deg,#101a2c,#0a111e);border-radius:18px;padding:23px}
+    .feature-icon{width:46px;height:46px;display:grid;place-items:center;border-radius:13px;background:#168cff18;color:var(--cyan);font-size:22px;margin-bottom:14px}
+    .feature h3,.plan h3,.step h3{margin:0 0 7px;font-size:18px}
+    .feature p,.step p{color:var(--muted);font-size:14px;margin:0}
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .plan{display:flex;flex-direction:column;position:relative}
+    .plan.popular{border-color:#168cff99;box-shadow:0 0 30px #168cff12}
+    .popular-tag{position:absolute;top:13px;right:13px;font-size:10px;font-weight:900;color:#83ceff;background:#168cff22;padding:5px 8px;border-radius:7px}
+    .plan .desc{color:var(--muted);font-size:13px;min-height:42px}
+    .price{font-size:27px;font-weight:900;margin:15px 0 3px}
+    .price small{font-size:12px;color:var(--muted);font-weight:500}
+    .plan ul{padding:0;list-style:none;margin:16px 0 22px;color:#c8d5e8;font-size:14px;flex:1}
+    .plan li{margin:8px 0}
+    .plan li:before{content:"✓";color:#4be0a5;margin-right:8px;font-weight:900}
+    .plan .btn{width:100%}
+    .notice{margin-top:18px;padding:14px 16px;border-radius:12px;border:1px solid #f5b94245;background:#f5b9420d;color:#d8c9a7;font-size:13px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .step-num{font-size:12px;color:var(--cyan);font-weight:900;letter-spacing:1px;margin-bottom:10px}
+    .contact-box{display:flex;justify-content:space-between;align-items:center;gap:20px;background:radial-gradient(ellipse at 90% 10%,#168cff24,transparent 45%),#0d1525;padding:30px}
+    .contact-box h2{margin:0 0 6px;font-size:clamp(24px,4vw,34px)}
+    .contact-box p{margin:0;color:var(--muted)}
+    footer{padding:25px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
+    .footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+    .wa-float{position:fixed;right:18px;bottom:18px;z-index:20;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#19c773;color:#052213;font-size:25px;box-shadow:0 8px 28px #19c77355}
+    @media(max-width:760px){nav{display:none}.hero{grid-template-columns:1fr;padding:50px 0 25px;gap:12px}.hero-copy{text-align:center}.lead{margin:auto}.actions,.trust{justify-content:center}.visual{min-height:300px}.game-card{max-width:320px}.grid,.plans,.steps{grid-template-columns:1fr}.feature,.plan,.step{padding:20px}.plan .desc{min-height:0}.contact-box{align-items:flex-start;flex-direction:column}.section-head{margin-bottom:24px}section{padding:42px 0}h1{letter-spacing:-1px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Premium Panel হোম">
+        <span class="logo">⚡</span><span>Premium <span style="color:#55d6ff">Panel</span></span>
+      </a>
+      <nav aria-label="মূল নেভিগেশন">
+        <a href="#features">সুবিধা</a><a href="#plans">প্যাকেজ</a><a href="#how">কীভাবে অর্ডার করবেন</a><a href="#contact">যোগাযোগ</a>
+      </nav>
+      <a class="btn primary" href="https://wa.me/8801849399859" target="_blank" rel="noopener">WhatsApp ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="dot"></span> GAMING • TOOLS • SUPPORT</div>
+        <h1>আপনার গেমিং,<br><em>আপনার স্টাইল।</em></h1>
+        <p class="lead">Premium Panel-এ স্বাগতম। প্যাকেজ সম্পর্কে জানুন, আপনার প্রয়োজনীয় তথ্য যাচাই করুন এবং অর্ডার বা সহায়তার জন্য সরাসরি WhatsApp-এ যোগাযোগ করুন।</p>
+        <div class="actions">
+          <a class="btn primary" href="#plans">প্যাকেজ দেখুন ↓</a>
+          <a class="btn secondary" href="https://wa.me/8801849399859?text=আসসালামু%20আলাইকুম%2C%20Premium%20Panel%20সম্পর্কে%20জানতে%20চাই।" target="_blank" rel="noopener">WhatsApp-এ কথা বলুন</a>
+        </div>
+        <div class="trust"><span>মোবাইল-ফ্রেন্ডলি</span><span>সহজ অর্ডার</span><span>সরাসরি যোগাযোগ</span></div>
+      </div>
+      <div class="visual" aria-label="গেমিং-অনুপ্রাণিত ডিজাইন">
+        <div class="orb"></div>
+        <div class="game-card">
+          <div class="card-top"><span>PREMIUM PANEL</span><span class="chip">GAMING</span></div>
+          <div class="game-icon" aria-hidden="true">🎮</div>
+          <h3>Level Up Your Game</h3>
+          <p>Explore packages • Contact support</p>
+          <div class="meter"><i></i></div>
+          <div style="display:flex;justify-content:space-between;color:#9aabc4;font-size:11px;margin-top:8px"><span>PLAYER EXPERIENCE</span><span>READY</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head"><h2>কেন Premium Panel?</h2><p>অর্ডার করার আগে প্রয়োজনীয় তথ্য জেনে নিন এবং সরাসরি যোগাযোগ করুন।</p></div>
+        <div class="grid">
+          <article class="feature"><div class="feature-icon">⚡</div><h3>সহজ অর্ডার</h3><p>একটি বাটনেই WhatsApp-এ অর্ডারের তথ্য পাঠাতে পারবেন।</p></article>
+          <article class="feature"><div class="feature-icon">📱</div><h3>মোবাইল-ফ্রেন্ডলি</h3><p>ফোন, ট্যাবলেট ও কম্পিউটারে ব্যবহার উপযোগী ডিজাইন।</p></article>
+          <article class="feature"><div class="feature-icon">🛡️</div><h3>আগে যাচাই করুন</h3><p>পেমেন্টের আগে প্যাকেজ, সামঞ্জস্য ও ব্যবহারের নিয়ম নিশ্চিত করুন।</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans">
+      <div class="wrap">
+        <div class="section-head"><h2>প্যাকেজসমূহ</h2><p>আপনার প্রয়োজন অনুযায়ী প্যাকেজ বেছে নিন। নিচের মূল্যগুলো উদাহরণ—প্রকাশের আগে নিজের সঠিক মূল্য বসান।</p></div>
+        <div class="plans">
+          <article class="plan">
+            <h3>Starter</h3><p class="desc">স্বল্প সময়ের জন্য পরীক্ষা করে দেখতে</p>
+            <div class="price">৳40 <small>/ ১ ঘণ্টা · উদাহরণ</small></div>
+            <ul><li>১ ঘণ্টার প্যাকেজ</li><li>WhatsApp অর্ডার সহায়তা</li><li>ব্যবহারের নিয়ম যাচাই</li></ul>
+            <button class="btn secondary order-btn" data-plan="Starter — ১ ঘণ্টা — ৳40 (উদাহরণ)">অর্ডার করুন</button>
+          </article>
+          <article class="plan popular">
+            <span class="popular-tag">POPULAR</span>
+            <h3>Weekly</h3><p class="desc">নিয়মিত ব্যবহারের জন্য</p>
+            <div class="price">৳500 <small>/ ৭ দিন · উদাহরণ</small></div>
+            <ul><li>৭ দিনের প্যাকেজ</li><li>WhatsApp অর্ডার সহায়তা</li><li>ব্যবহারের নিয়ম যাচাই</li></ul>
+            <button class="btn primary order-btn" data-plan="Weekly — ৭ দিন — ৳500 (উদাহরণ)">অর্ডার করুন</button>
+          </article>
+          <article class="plan">
+            <h3>Monthly</h3><p class="desc">দীর্ঘমেয়াদি প্যাকেজ খুঁজছেন?</p>
+            <div class="price">যোগাযোগ করুন</div>
+            <ul><li>প্রাপ্যতা নিশ্চিত করুন</li><li>মূল্য WhatsApp-এ জেনে নিন</li><li>কেনার আগে শর্ত যাচাই</li></ul>
+            <button class="btn secondary order-btn" data-plan="Monthly — মূল্য ও প্রাপ্যতা জানতে চাই">মূল্য জানুন</button>
+          </article>
+        </div>
+        <div class="notice">গুরুত্বপূর্ণ: এই পৃষ্ঠার মূল্যগুলো উদাহরণ হিসেবে দেওয়া। আপনার আসল মূল্য ও প্যাকেজ অনুযায়ী সম্পাদনা করুন। কোনো টুল গেমের নিয়ম বা সেবার শর্ত ভঙ্গ করলে সেটি ব্যবহার বা বিক্রি করবেন না।</div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap">
+        <div class="section-head"><h2>কীভাবে অর্ডার করবেন?</h2><p>মাত্র তিনটি সহজ ধাপ।</p></div>
+        <div class="steps">
+          <article class="step"><div class="step-num">STEP 01</div><h3>প্যাকেজ বাছুন</h3><p>আপনার প্রয়োজন অনুযায়ী প্যাকেজ নির্বাচন করুন।</p></article>
+          <article class="step"><div class="step-num">STEP 02</div><h3>WhatsApp-এ যোগাযোগ</h3><p>প্যাকেজের নামসহ বার্তা পাঠিয়ে মূল্য ও শর্ত নিশ্চিত করুন।</p></article>
+          <article class="step"><div class="step-num">STEP 03</div><h3>নিশ্চিত করে নিন</h3><p>সব তথ্য, পেমেন্ট পদ্ধতি ও ডেলিভারি নিশ্চিত হওয়ার পর এগিয়ে যান।</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div><h2>সাহায্য দরকার?</h2><p>প্যাকেজ, মূল্য বা অর্ডার সম্পর্কে WhatsApp-এ যোগাযোগ করুন।</p></div>
+          <a class="btn primary" href="https://wa.me/8801849399859?text=আসসালামু%20আলাইকুম%2C%20Premium%20Panel%20সম্পর্কে%20সহায়তা%20চাই।" target="_blank" rel="noopener">✆ WhatsApp-এ যোগাযোগ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner"><span>© <span id="year"></span> Premium Panel. All rights reserved.</span><span>স্বাধীন সেবা পৃষ্ঠা • কোনো গেমের অফিসিয়াল ওয়েবসাইট নয়</span></div>
+  </footer>
+  <a class="wa-float" href="https://wa.me/8801849399859" target="_blank" rel="noopener" aria-label="WhatsApp-এ যোগাযোগ">✆</a>
+  <script>
+    // বাংলাদেশি নম্বরের আন্তর্জাতিক ফরম্যাট: 8801849399859
+    const whatsappNumber = "8801849399859";
+    document.getElementById("year").textContent = new Date().getFullYear();
+    document.querySelectorAll(".order-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        const plan = button.dataset.plan;
+        const message = `আসসালামু আলাইকুম, Premium Panel-এর ${plan} সম্পর্কে জানতে চাই। বিস্তারিত জানাবেন?`;
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+      });
+    });
+  </script>
+</body>
+</html>
